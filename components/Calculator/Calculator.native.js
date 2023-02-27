@@ -1,12 +1,16 @@
-import { StyleSheet, View, Text, TextInput } from "react-native";
+import { useContext } from "react";
+import { StyleSheet, View } from "react-native";
 
 import CalculatorButtons from "./Buttons/CalculatorButtons.native";
 import CalculatorDisplay from "./Display/CalculatorDisplay.native";
+import CalcContext from "../../store/calc-context";
 
 export default function Calculator() {
+  const calcContext = useContext(CalcContext);
+
   return (
     <View style={styles.calculator}>
-      <CalculatorDisplay title="CalcMaster" />
+      <CalculatorDisplay title="CalcMaster" value={calcContext.value} />
       <CalculatorButtons />
     </View>
   );

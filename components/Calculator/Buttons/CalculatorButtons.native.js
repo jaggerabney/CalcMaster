@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ToastAndroid } from "react-native";
 
 import CalculatorRow from "./Row/CalculatorRow.native";
 
-export default function CalculatorButtons(props) {
+export default function CalculatorButtons() {
   return (
     <View style={styles.buttons}>
       <CalculatorRow values={["√", "x²", "^", "π"]} />
