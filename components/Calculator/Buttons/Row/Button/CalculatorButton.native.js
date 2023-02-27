@@ -1,14 +1,9 @@
 import { useContext } from "react";
 import { StyleSheet, View, Text, ToastAndroid } from "react-native";
 
-import CalcContext from "../../../../../store/calc-context";
+import CalcContext, { values } from "../../../../../store/calc-context";
 
 export default function CalculatorButton(props) {
-  const values = {
-    operands: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "π"],
-    operators: ["⌫", "=", "+", "—", "X", "÷", "%", "C", "AC", "^", "x²", "√"],
-  };
-
   const calcContext = useContext(CalcContext);
 
   function clickHandler() {

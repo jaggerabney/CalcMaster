@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { ToastAndroid } from "react-native";
 import { List, Item } from "linked-list";
 
+export const values = {
+  operands: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "π"],
+  operators: ["⌫", "=", "+", "—", "X", "÷", "%", "C", "AC", "^", "x²", "√"],
+};
+
 export default CalcContext = React.createContext({
   value: undefined,
   operands: List,
@@ -40,7 +45,13 @@ export function CalcContextProvider(props) {
   function addOperator(operator) {
     ToastAndroid.show(operator, ToastAndroid.SHORT);
 
-    setOperators((prevOperators) => new List(prevOperators, operator));
+    setOperators((prevOperators) => {
+      if (!prevOperators) {
+        return new List(new Item(operator));
+      }
+
+      return new List(...prevOperators.toArray(), new Item(operator));
+    });
   }
 
   return (
