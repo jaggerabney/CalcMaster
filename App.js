@@ -1,20 +1,21 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+
+import Calculator from "./components/Calculator/Calculator";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hi Kira!</Text>
-      <StatusBar style="auto" />
+      <Calculator />
+      <StatusBar />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#2e2e2e",
+    padding: "3%",
+    paddingTop: "15%",
   },
 });
